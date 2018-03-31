@@ -1,7 +1,7 @@
 /*
   BettermentLabsLandingContainer.js
     Betterment Labs
-    Created by BettermentLabs. 
+    Created by BettermentLabs.
     Copyright © 2018 Betterment Labs, LLC. All rights reserved.
 
 Component BettermentLabsLandingContainer.js
@@ -35,6 +35,7 @@ import purchaseProductWithDispatch, {consumeProductWithDispatch} from '../../../
 import BettermentLabsLandingPage from '../dumbViews/BettermentLabsLandingPage';
 // UI Logic
 import {getMainRouterGoToSwipeableExample} from '../routers/MainRouter';
+import {getUpdateStoreWithCurrentLocationFunc} from '../../logic/location/locationServices';
 
 export default BettermentLabsLandingContainer = (props) => {
     const strings = props.strings || null;
@@ -42,6 +43,9 @@ export default BettermentLabsLandingContainer = (props) => {
     const dispatcher = props.dispatch ? {dispatch: props.dispatch} : null;
     const thisRemoveContactFromAppPhonebook = props.dispatch ? (contactIndex) => getRemoveContactFromAppPhonebookWithDispatch({contactIndex: contactIndex, dispatcher: props.dispatch}) : null;
     const ViewButtons = [
+      {title: strings.getLocationButton,
+        onPress: getUpdateStoreWithCurrentLocationFunc(dispatcher)
+      },
       {title: strings.goToSwipeableExample,
         onPress: getMainRouterGoToSwipeableExample(dispatcher)
       },
@@ -67,7 +71,7 @@ export default BettermentLabsLandingContainer = (props) => {
       },
       {title: strings.getContactButton,
         onPress: () => saveContactFromPhonesPhoneBook(dispatcher)
-      }
+      },
     ];
     const ThisViewWithStore = connect(mapStateToProps)(BettermentLabsLandingPage);
     return(

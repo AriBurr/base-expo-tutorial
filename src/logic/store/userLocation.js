@@ -17,6 +17,12 @@ export const setUserLongitudeTo = longitude => {
 export const setUserLatitudeTo = latitude => {
   return { type: 'SET_USER_LATITUDE_TO', latitude: latitude };
 };
+export const setDeviceIsFetchingLocation = {
+  type: 'SET_DEVICE_IS_FETCHING_LOCATION'
+};
+export const setDeviceIsNotFetchingLocation = {
+  type: 'SET_DEVICE_IS_NOT_FETCHING_LOCATION'
+};
 
 const defaultLocationState = { longitude: null, latitude: null };
 
@@ -27,6 +33,10 @@ const userLocationReducer = (state = defaultLocationState, action) => {
       return Object.assign({}, state, { longitude: action.longitude });
     case setUserLatitudeTo().type:
       return Object.assign({}, state, { latitude: action.latitude });
+    case setDeviceIsFetchingLocation.type:
+      return Object.assign({}, state, {deviceIsGettingLocation: true});
+    case setDeviceIsNotFetchingLocation.type:
+      return Object.assign({}, state, {deviceIsGettingLocation: false});
   }
   return state;
 };
