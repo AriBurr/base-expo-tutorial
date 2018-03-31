@@ -1,7 +1,7 @@
 /*
   BettermentLabsLandingPage.js
     Betterment Labs
-    Created by BettermentLabs. 
+    Created by BettermentLabs.
     Copyright © 2018 Betterment Labs, LLC. All rights reserved.
 
 Component BettermentLabsLandingPage.js
@@ -19,6 +19,7 @@ import styled, {ThemeProvider} from 'styled-components';
 
 // Import Other App UI Elements
 import {BHeader} from '../../../base/interface/components/BText';
+import LocationTextDisplay from '../../../src/interface/components/LocationTextDisplay';
 import ImageWithAspect from '../../../base/interface/components/ImageWithAspect';
 import {defaultAppStyles} from '../../../base/interface/theming/AppStyles';
 import BRoundedButton from '../../../base/interface/components/BRoundedButton';
@@ -74,7 +75,7 @@ const PageButtons = (PageButtonArray) => {
     })
     return(JSXButtons);
 }
-    
+
 export default BettermentLabsLandingPage = (props) => {
     // console.log(props);
     // console.log("props.marketplace");
@@ -127,7 +128,7 @@ export default BettermentLabsLandingPage = (props) => {
                     product: product,
                     index: index}))
         : null;
-    
+
     const AttemptedTransactions = (props.marketplace && props.marketplace.AttemptedTransactions) ?
         props.marketplace.AttemptedTransactions.map(
             (product, index) =>
@@ -145,12 +146,13 @@ export default BettermentLabsLandingPage = (props) => {
                     product: product,
                     index: index}))
         : null;
-    
+
         const mainView =
         (<ThemeProvider theme={style}>
             <MainView>
                 <ScrollView>
                     <BHeader>{strings.title}</BHeader>
+                    <LocationTextDisplay />
                     <ViewSpacer/>
                     {Buttons}
                     <ViewSpacer/>
