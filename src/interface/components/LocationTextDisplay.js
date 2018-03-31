@@ -55,11 +55,11 @@ export default (LocationTextDisplay = props => {
     <LocationView flex={props.flex || null} width={props.width || null}>
       <RowSection>
         <Label>Latitude:</Label>
-        <ValueLabel>10.213</ValueLabel>
+        <ValueLabel>{props.lat}</ValueLabel>
       </RowSection>
       <RowSection>
         <Label>Longitude:</Label>
-        <ValueLabel>120.123</ValueLabel>
+        <ValueLabel>{props.lon}</ValueLabel>
       </RowSection>
     </LocationView>
   );

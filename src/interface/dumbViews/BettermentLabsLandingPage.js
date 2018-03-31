@@ -19,7 +19,7 @@ import styled, {ThemeProvider} from 'styled-components';
 
 // Import Other App UI Elements
 import {BHeader} from '../../../base/interface/components/BText';
-import LocationTextDisplay from '../../../src/interface/components/LocationTextDisplay';
+import LocationTextDisplayContainer from '../../../src/interface/containers/LocationTextDisplayContainer';
 import ImageWithAspect from '../../../base/interface/components/ImageWithAspect';
 import {defaultAppStyles} from '../../../base/interface/theming/AppStyles';
 import BRoundedButton from '../../../base/interface/components/BRoundedButton';
@@ -151,24 +151,24 @@ export default BettermentLabsLandingPage = (props) => {
         (<ThemeProvider theme={style}>
             <MainView>
                 <ScrollView>
-                    <BHeader>{strings.title}</BHeader>
-                    <LocationTextDisplay />
-                    <ViewSpacer/>
-                    {Buttons}
-                    <ViewSpacer/>
-                    {contacts}
-                    <ViewSpacer/>
-                    <MarketplaceHeader>{strings.storeHeaderTitle}</MarketplaceHeader>
-                    {ProductsButtons}
-                    <MarketplaceHeader>{strings.purchasedProductsTitle}</MarketplaceHeader>
-                    {PurchasedProducts}
-                    <MarketplaceHeader>{strings.failedPurchasesTitle}</MarketplaceHeader>
-                    {FailedTransactions}
-                    <MarketplaceHeader>{strings.attemptedPurchasesTitle}</MarketplaceHeader>
-                    {AttemptedTransactions}
-                    <MarketplaceHeader>{strings.consumedProductsTitle}</MarketplaceHeader>
-                    {ConsumedProducts}
-                    <ScrollViewBottomSpacer/>
+                  <BHeader>{strings.title}</BHeader>
+                  <LocationTextDisplayContainer />
+                  <ViewSpacer/>
+                  {Buttons}
+                  <ViewSpacer/>
+                  {contacts}
+                  <ViewSpacer/>
+                  <MarketplaceHeader>{strings.storeHeaderTitle}</MarketplaceHeader>
+                  {ProductsButtons}
+                  <MarketplaceHeader>{strings.purchasedProductsTitle}</MarketplaceHeader>
+                  {PurchasedProducts}
+                  <MarketplaceHeader>{strings.failedPurchasesTitle}</MarketplaceHeader>
+                  {FailedTransactions}
+                  <MarketplaceHeader>{strings.attemptedPurchasesTitle}</MarketplaceHeader>
+                  {AttemptedTransactions}
+                  <MarketplaceHeader>{strings.consumedProductsTitle}</MarketplaceHeader>
+                  {ConsumedProducts}
+                  <ScrollViewBottomSpacer/>
                 </ScrollView>
                 {logoImage}
             </MainView>

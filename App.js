@@ -1,7 +1,7 @@
 /*
   App.js
     CanonicalAppName
-    Created by BettermentLabs. 
+    Created by BettermentLabs.
     Copyright © 2018 Betterment Labs, LLC. All rights reserved.
 
 export Component App.js
@@ -31,6 +31,6 @@ export default App = (props) => {
     return (
       <Provider store={store}>
         <MainRouter/>
-    </Provider>
+      </Provider>
     );
 }
