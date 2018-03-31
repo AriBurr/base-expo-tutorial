@@ -35,16 +35,20 @@ import purchaseProductWithDispatch, {consumeProductWithDispatch} from '../../../
 import BettermentLabsLandingPage from '../dumbViews/BettermentLabsLandingPage';
 // UI Logic
 import {getMainRouterGoToSwipeableExample} from '../routers/MainRouter';
+import {getMainRouterGoToLocationView} from '../routers/MainRouter';
 import {getUpdateStoreWithCurrentLocationFunc} from '../../logic/location/locationServices';
 
 export default BettermentLabsLandingContainer = (props) => {
     const strings = props.strings || null;
-
+    const thisGoToLocationView = props.dispatch ? getMainRouterGoToLocationView(props.dispatch) : null;
     const dispatcher = props.dispatch ? {dispatch: props.dispatch} : null;
     const thisRemoveContactFromAppPhonebook = props.dispatch ? (contactIndex) => getRemoveContactFromAppPhonebookWithDispatch({contactIndex: contactIndex, dispatcher: props.dispatch}) : null;
     const ViewButtons = [
       {title: strings.getLocationButton,
         onPress: getUpdateStoreWithCurrentLocationFunc(dispatcher)
+      },
+      {title: strings.goToLocationPageButton,
+        onPress: getMainRouterGoToLocationView(dispatcher)
       },
       {title: strings.goToSwipeableExample,
         onPress: getMainRouterGoToSwipeableExample(dispatcher)

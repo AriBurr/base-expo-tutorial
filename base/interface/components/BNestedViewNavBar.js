@@ -1,7 +1,7 @@
 /*
   BNestedViewNavBar.js
     Betterment Labs
-    Created by BettermentLabs. 
+    Created by BettermentLabs.
     Copyright © 2018 Betterment Labs, LLC. All rights reserved.
 
 Component BNestedViewNavBar.js
@@ -11,7 +11,7 @@ Component BNestedViewNavBar.js
     includes all typical React & base project props
     onPress: function that pressing on button calls (should be redux store action)
 
-  Outputs: 
+  Outputs:
     renders button per description above
 */
 
@@ -54,7 +54,7 @@ const LeftButtonText = BothButtonText.extend`
 const RightButtonText = BothButtonText.extend`
     margin-right: 20px;
     text-align: right;`;
-    
+
 export default BNestedViewNavBar = (props) => {
     const defaultStrings = getPageStrings('BasicNavStrings');
     const BackFunc = props.BackFunc ? props.BackFunc : null;
@@ -64,7 +64,7 @@ export default BNestedViewNavBar = (props) => {
     return(
         <MainView>
             {BackFunc && <BButton ButtonView={LeftButtonView} ButtonText={LeftButtonText} onPress={BackFunc} text={BackText} {...props} />}
-            {ForwardFunc && <BButton ButtonView={RightButtonView} ButtonText={RightButtonText} onPress={ForwardFunc} text={ForwardText} {...props} />}            
+            {ForwardFunc && <BButton ButtonView={RightButtonView} ButtonText={RightButtonText} onPress={ForwardFunc} text={ForwardText} {...props} />}
         </MainView>
     )
 }
